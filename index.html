@@ -1,0 +1,93 @@
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<html>
+<nav id="navbar">
+  <header>Documentação CPU de 8bits</header>
+  <br>
+  <ul class="nav"> 
+    <a class="nav-link" href="#Descricao_Geral" rel="internal"><li class="bar">Descricao Geral</li></a>
+    <a class="nav-link" href="#Operacoes_Possiveis" rel="internal"><li class="bar">Operacoes Possiveis</li></a>
+    <a class="nav-link" href="#Conjunto_de_Instrucoes" rel="internal"><li class="bar">Conjunto de Instrucoes</li></a>
+    <a class="nav-link" href="#Implementacao" rel="internal"><li class="bar">Implementacao</li></a>
+    <a class="nav-link" href="#Componentes" rel="internal"><li class="bar">Componentes</li></a>
+    <a class="nav-link" href="#Consideracoes_finais" rel="internal"><li class="bar">Consideracoes finais</li></a>
+    <a class="nav-link" href="#Bibliografia" rel="internal"><li class="bar">Bibliografia</li></a>
+  </ul>
+</nav>
+  <br>
+  <br>
+  <br>
+  <body>
+    <main id="main-doc">
+        <section class="main-section" id="Descricao_Geral">
+            <header>Descricao Geral</header>
+            <p>Projeto de CPU projetada para busca sequencial em memorias de 256 posições (256 bits/16 bytes). Esta é uma arquitetura fictícia baseada na arquitetura do Microprocessador Intel 8008. O funcionamento é similar ao apresentado no vídeo abaixo:</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jFDMZpkUWCw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    <br>
+    <br>
+        </section>
+        <section class="main-section" id="Operacoes_Possiveis">
+            <header>Operacoes Possiveis</header>
+            <img src="https://uploaddeimagens.com.br/images/001/802/367/original/operacoes.PNG?1546025270">
+            <p>Va ressaltar alguns detalhes referentes as operações possiveis:</p>
+            <ul>
+                <li>As instruções são provindas de um arquivo em hexadecimal que é carregado na memoria de instruções(ROM) e tem o seguinte formato<code>0xB0</code> e com mnemônicos equivalentes nos seguintes formatos <code>LDA R0,R0</code> .
+                </li>
+            </ul>
+            <ul>
+<li>Após a execução de cada instrução a memoria de dados é alterada sendo que antes da primeira instrução o valor da posição<code>0x00</code> deve ser de <code>0xB0</code> .
+                </li>
+            </ul>
+            <ul>
+                <li>Ao fim da execução do programa de exemplo a posição <code>0x00</code> da memoria de dados deve ter o valor <code>0x01</code> e de forma geral todas as posições devem ter os seus valores alterados.
+                </li>
+            </ul>
+        </section>
+        <section class="main-section" id="Conjunto_de_Instrucoes">
+            <header id="conjunto">Conjunto de Instrucoes</header>
+            <p>De forma geral as operações e o funcionamento delas acima explicado é realizado por meio de series de instruções(assim como em uma CPU real). Essas instruções se encontram descritas abaixo:</p>
+            <ul>
+                <li>Formato das instruções:</li>
+                <img src="https://uploaddeimagens.com.br/images/001/832/706/full/enderecamento.PNG?1547480809">
+                <li>Tabela de instruções:</li>
+                <img src="https://uploaddeimagens.com.br/images/001/832/659/full/tabela_instrucoes.PNG?1547480159">
+                <li>Posicionamento das instruções na memoria de instruções: </li>
+                <img src="https://uploaddeimagens.com.br/images/001/832/670/original/mem_instrucoes.PNG?1547480333">
+            </ul>
+        </section>
+        <section class="main-section" id="Implementacao">
+            <header id="imp">Implementacao</header>
+            <p>Para a implementação da CPU foram utilizados circuitos lógicos básicos e o simulador Logisim.</p>
+            	<p>O funcionamento básico da arquitetura se encontra descrito na imagem abaixo:</p>
+            	<img src="https://uploaddeimagens.com.br/images/001/832/747/full/arquitetura.PNG?1547481908">
+            	<p>A implementação desta arquitetura fazendo a utilização de circuitos lógicos foi a seguinte:</p>
+            	<img src="https://uploaddeimagens.com.br/images/001/832/750/full/CPU-img.png?1547481987">
+        </section>
+        <section class="main-section" id="Componentes">
+            <header id="comp">Componentes</header>
+            <p>Unidade de controle:</p>
+            <img src="https://uploaddeimagens.com.br/images/001/832/773/full/UC-img.png?1547482443">
+            <p>Banco de registradores:</p>
+            <img src="https://uploaddeimagens.com.br/images/001/832/771/full/registradores-img.png?1547482394">
+            <p>Unidade Logico Aritmetica (ULA):</p>
+            <img src="https://uploaddeimagens.com.br/images/001/832/774/full/ULA-img.png?1547482476">
+            <p>Registrador de instruções:</p>
+            <img src="https://uploaddeimagens.com.br/images/001/832/948/full/registrador-instrucoes-img.png?1547486578">
+        </section>
+        <section class="main-section" id="Consideracoes_finais">
+            <header>Consideracoes finais</header>
+            <p>Consideracoes finais</p>
+        </section>
+        <section class="main-section" id="Bibliografia">
+         <header>Bibliografia</header>
+            <ul>
+                <li><a href="https://minnie.tuhs.org//CompArch/Tutes/week03.html">https://minnie.tuhs.org//CompArch/Tutes/week03.html</a></li>
+                <li><a href="ftp://www.cs.uregina.ca/pub/class/301/cpu8bit/lecture-1.html">ftp://www.cs.uregina.ca/pub/class/301/cpu8bit/lecture-1.html</a></li>
+                <li><a href="https://eleccompengineering.files.wordpress.com/2014/07/sample_project_design_and_simulation_of_8_bit_computer_with_logism.pdf">https://eleccompengineering.files.wordpress.com/2014/07/sample_project_design_and_simulation_of_8_bit_computer_with_logism.pdf</a></li>
+            </ul>
+        </section>
+  </body>
+    </main>
+</html>
